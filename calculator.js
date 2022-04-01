@@ -92,6 +92,7 @@ function ResetCalculation() {
     changeOperand("noOperation");
     operand0 = "";
     operand1 = "";
+    operandNum = 0;
 }
 
 function ResetDisplay() {
@@ -120,7 +121,8 @@ function DisplayValue(value){
     document.getElementById("tb").value = value.toString();
     console.log(`\n\ncurrOperation: ${currOperation}\n`);
     console.log(`Operand 1: ${operand0}\n`);
-    console.log(`Operand 2: ${operand1}`);
+    console.log(`Operand 2: ${operand1}\n`);
+    console.log(`currOperand: ${operandNum}`)
 }
 
 
