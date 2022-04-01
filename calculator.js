@@ -103,12 +103,34 @@ function ResetDisplay() {
 function insertValue(number) {
     let operand;
     if(operandNum == 0) { // if in 1st operand
-        operand0 = operand0 + number.toString();
-        operand = operand0;
+        if(operand0 == "0") {
+            if(number == 0) {
+                return;
+            }
+            else {
+                operand0 = number.toString();
+                operand = operand0;
+            }
+        }
+        else {
+            operand0 = operand0 + number.toString();
+            operand = operand0;
+        }
     }
     else {
-        operand1 = operand1 + number.toString();
-        operand = operand1;
+        if(operand1 == "0") {
+            if(number == 0) {
+                return;
+            }
+            else {
+                operand1 = number.toString();
+                operand1 = operand1;
+            }
+        }
+        else {
+            operand1 = operand1 + number.toString();
+            operand = operand1;
+        }
     }
     DisplayValue(operand)
     //DisplayValue();
