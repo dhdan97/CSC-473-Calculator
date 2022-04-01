@@ -10,75 +10,27 @@
 </head>
 <body>
 <section class="container">
-<input type="text" id="tb" class="text-input" placeholder="0">
+<input type="text" id="tb" class="text-input" placeholder="0" readonly>
 <button class="c1" id="AC">AC</button>
-<button class="c2" id="del" onclick="Redfunc()">DEL</button>
-<button class="c2" id="div">/</button>
-<button class="d1" id="seven">7</button>
-<button class="d1" id="eight">8</button>
-<button class="d1" id="nine" onclick="displayValue()">9</button>
-<button class="d1" id="mult">*</button>
+<button class="c2" id="del" onclick="deleteLSD()">DEL</button>
+<button class="c2" id="div" onclick="changeOperand('divide')">/</button>
+<button class="d1" id="seven" onclick="insertValue(7)">7</button>
+<button class="d1" id="eight" onclick="insertValue(8)">8</button>
+<button class="d1" id="nine" onclick="insertValue(9)">9</button>
+<button class="d1" id="mult" onclick="changeOperand('multiply')">*</button>
 
-<button class="e1" id="four" onclick="displayDate()">4</button>
-<button class="e1" id="five" onclick="Redfunc()">5</button>
-<button class="e1" id="six">6</button>
-<button class="e1" id="minus">-</button>
-<button class="f1" id="one">1</button>
-<button class="f1" id="two" onclick="displayAnswer()">2</button>
-<button class="f1" id="three">3</button>
-<button class="f1" id="plus">+</button>
-<button class="g1" id="zero">0</button>
+<button class="e1" id="four" onclick="insertValue(4)">4</button>
+<button class="e1" id="five" onclick="insertValue(5)">5</button>
+<button class="e1" id="six" onclick="insertValue(6)">6</button>
+<button class="e1" id="minus" onclick="changeOperand('subtract')">-</button>
+<button class="f1" id="one" onclick="insertValue(1)">1</button>
+<button class="f1" id="two" onclick="insertValue(2)">2</button>
+<button class="f1" id="three" onclick="insertValue(3)">3</button>
+<button class="f1" id="plus" onclick="changeOperand('add')">+</button>
+<button class="g1" id="zero" onclick="insertValue(0)">0</button>
 <button class="g1" id="dot">.</button>
-<button class="h2" id="equals" onclick="AddNumbers()">=</button>
+<button class="h2" id="equals" onclick="peformCalculation()">=</button>
 
-
-<script>
-    function displayDate() {
-      document.getElementById("four").innerHTML = 7;
-    }
-
-    function displayValue(){
-      
-      document.getElementById("one").innerHTML=100;
-    }
-    function displayAnswer(){
-      
-      document.getElementById("tb").value=100;
-    }
-
-    function AddNumbers(){
-        //mybuttons=document.querySelectorAll('buttons');
-        if(document.getElementById("seven").clicked == true)
-        {
-          alert("button 7 was clicked");
-        }
-        
-       // mybuttons[0].addEventListener('click',Redfunc);
-    }
-
-let divBtn=document.getElementById("div");
-let multBtn=document.getElementById("mult");
-let addBtn=document.getElementById("add");
-let subBtn=document.getElementById("minus");
-let dotBtn=document.getElementById("dot");
-let eqBtn=document.getElementById("equals");
-
-let n1=document.getElementById("one");
-let n2=document.getElementById("two");
-let n3=document.getElementById("three");
-let n4=document.getElementById("four");
-let n5=document.getElementById("five");
-let n6=document.getElementById("six");
-let n7=document.getElementById("seven");
-let n8=document.getElementById("eight");
-let n9=document.getElementById("nine");
-let n0=document.getElementById("zero");
-let textbox=document.getElementById("text-input");
-
-
-
-
-</script>
 <script src="calculator.js"></script>
 </section>
 </body>
