@@ -42,8 +42,13 @@ function addDecimalPoint() {
 }
 
 function changeOperand(operation) {
+    if(operand0 == "") {
+        operand0 = "0"
+        DisplayValue(0)
+    }
     operandNum = !operandNum;
     currOperation = operation;
+    // DisplayValue(0)
 }
 
 function deleteLSD() {
@@ -58,24 +63,29 @@ function deleteLSD() {
 }
 
 function peformCalculation() {
-    switch (currOperation) {
-        case "add":
-            result = parseFloat(operand0) + parseFloat(operand1);
-            break;
-        case "subtract":
-            result = parseFloat(operand0) - parseFloat(operand1);
-            break;
-        case "multiply":
-            result = parseFloat(operand0) * parseFloat(operand1);
-            break;
-        case "divide":
-                result = parseFloat(operand0) / parseFloat(operand1); // check for 0 divison later
+    if(currOperation != "noOperation" && operand0 != "" && operand1 != "") {
+        switch (currOperation) {
+            case "add":
+                result = parseFloat(operand0) + parseFloat(operand1);
                 break;
-        case "noOperation":
-            break;
+            case "subtract":
+                result = parseFloat(operand0) - parseFloat(operand1);
+                break;
+            case "multiply":
+                result = parseFloat(operand0) * parseFloat(operand1);
+                break;
+            case "divide":
+                    result = parseFloat(operand0) / parseFloat(operand1); // check for 0 divison later
+                    break;
+            case "noOperation":
+                break;
+        }
+        DisplayValue(result.toString());
+        ResetCalculation();
     }
-    DisplayValue(result.toString());
-    ResetCalculation();
+    else {
+        console.log("No operation/operands selected");
+    }
 }
 
 function ResetCalculation() {
