@@ -11,7 +11,7 @@
 <body>
 <section class="container">
 <input type="text" id="tb" class="text-input" placeholder="0" readonly>
-<button class="c1" id="AC">AC</button>
+<button class="c1" id="AC" onclick="ResetDisplay()">AC</button>
 <button class="c2" id="del" onclick="deleteLSD()">DEL</button>
 <button class="c2" id="div" onclick="changeOperand('divide')">/</button>
 <button class="d1" id="seven" onclick="insertValue(7)">7</button>
@@ -28,7 +28,7 @@
 <button class="f1" id="three" onclick="insertValue(3)">3</button>
 <button class="f1" id="plus" onclick="changeOperand('add')">+</button>
 <button class="g1" id="zero" onclick="insertValue(0)">0</button>
-<button class="g1" id="dot">.</button>
+<button class="g1" id="dot" onclick="addDecimalPoint()">.</button>
 <button class="h2" id="equals" onclick="peformCalculation()">=</button>
 
 <script src="calculator.js"></script>

@@ -30,6 +30,17 @@ let result = 0;
 //     textbox.value=5;
 // }
 
+function addDecimalPoint() {
+    if (!operandNum) {
+        operand0 = operand0 + "."
+        DisplayValue(operand0)
+    }
+    else {
+        operand1 = operand1 + "."
+        DisplayValue(operand1)
+    }
+}
+
 function changeOperand(operation) {
     operandNum = !operandNum;
     currOperation = operation;
@@ -49,16 +60,16 @@ function deleteLSD() {
 function peformCalculation() {
     switch (currOperation) {
         case "add":
-            result = parseInt(operand0) + parseInt(operand1);
+            result = parseFloat(operand0) + parseFloat(operand1);
             break;
         case "subtract":
-            result = parseInt(operand0) - parseInt(operand1);
+            result = parseFloat(operand0) - parseFloat(operand1);
             break;
         case "multiply":
-            result = parseInt(operand0) * parseInt(operand1);
+            result = parseFloat(operand0) * parseFloat(operand1);
             break;
         case "divide":
-                result = parseInt(operand0) / parseInt(operand1); // check for 0 divison later
+                result = parseFloat(operand0) / parseFloat(operand1); // check for 0 divison later
                 break;
         case "noOperation":
             break;
@@ -71,6 +82,11 @@ function ResetCalculation() {
     changeOperand("noOperation");
     operand0 = "";
     operand1 = "";
+}
+
+function ResetDisplay() {
+    ResetCalculation()
+    DisplayValue(0)
 }
 
 function insertValue(number) {
